@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Image Thread</title>
+</head>
+<body>
+<h1>Image Thread</h1>
+<p>Posts: <?= count($images); ?></p>
+<p>Views: <?= $views; ?></p>
+<?php if (isset($messages['errors']) && count($messages['errors']) > 0) : ?>
+	<ul>
+	<?php foreach($messages['errors'] as $message) : ?>
+		<li><?= $message; ?></li>
+	<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
+<h2>Upload a file</h2>
+<form method="POST" action="/" enctype="multipart/form-data">
+	<label>Select file to upload:</label>
+	<input type="file" name="image">
+	<label>Title:</label>
+	<input type="text" name="title" maxlength="255" />
+	<input type="hidden" name="csrf_name" value="<?= $csrf['name'] ?>">
+	<input type="hidden" name="csrf_value" value="<?= $csrf['value'] ?>">
+	<button type="submit">Upload</button>
+</form>
+<?php foreach ($images as $image) : ?>
+	<?php if (!is_null($image->getTitle())) : ?>
+		<h2><?= $image->getTitle() ?></h2>
+	<?php endif; ?>
+	<img src="uploads/thumbs/<?= $image->getPath() ?>" />
+<?php endforeach; ?>
+</body>
+</html>
