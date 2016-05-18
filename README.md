@@ -11,10 +11,14 @@ and open your browser to [http://localhost:8080][lh]
 
 ## TODO
 
-[ ] Unit tests
-[ ] Better frontend
+- [ ] Unit tests
+- [ ] Better frontend
 
 
 ## Changelog
 
 * 0.0.1 First version of the Image Thread
+
+
+[lh]: http://localhost:8080
+[slim]: http://www.slimframework.com/
