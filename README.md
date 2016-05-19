@@ -13,6 +13,7 @@ and open your browser to [http://localhost:8080][lh]
 
 - [ ] Unit tests
 - [ ] Better frontend
+- [ ] Finish the API
 
 
 ## Changelog
